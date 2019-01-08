@@ -1,16 +1,12 @@
 
 
+###
+### OSX-specific .bash_profile
+###
+HISTFILESIZE=100000000
+HISTSIZE=100000
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/jonathanhilgart/Downloads/google-cloud-sdk/path.bash.inc' ]; then source '/Users/jonathanhilgart/Downloads/google-cloud-sdk/path.bash.inc'; fi
 
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/jonathanhilgart/Downloads/google-cloud-sdk/completion.bash.inc' ]; then source '/Users/jonathanhilgart/Downloads/google-cloud-sdk/completion.bash.inc'; fi
-
-# Get the aliases and functions
-if [ -f ~/.bashrc ]; then
-    . ~/.bashrc
-fi
 #  ---------------------------------------------------------------------------
 #
 #  Description:  This file holds all my BASH configurations and aliases
@@ -36,27 +32,33 @@ fi
 #   ------------------------------------------------------------
     export PS1="________________________________________________________________________________\n| \w @ \h (\u) \n| => "
     export PS2="| => "
+    
+    ### Source general (osx or linux) bash setup
+    [[ -f ~/.bash_includes ]] && source ~/.bash_includes
+
+    ### Source other bash files with specific/private setups
+    if [ -f ~/.bash_profile_secrets ] ; then source ~/.bash_profile_secrets; fi
 
 #   Set Paths
 #   ------------------------------------------------------------
     export PATH="$PATH:/usr/local/bin/"
     export PATH="/usr/local/git/bin:/sw/bin/:/usr/local/bin:/usr/local/:/usr/local/sbin:/usr/local/mysql/bin:$PATH"
+    # added by Anaconda2 4.3.1 installer
+    export PATH="/anaconda/bin:$PATH"
+   
+    # The next line updates PATH for the Google Cloud SDK.
+    if [ -f '/Users/jonathanhilgart/Downloads/google-cloud-sdk/path.bash.inc' ]; then source '/Users/jonathanhilgart/Downloads/google-cloud-sdk/path.bash.inc'; fi
+
+    # The next line enables shell command completion for gcloud.
+    if [ -f '/Users/jonathanhilgart/Downloads/google-cloud-sdk/completion.bash.inc' ]; then source '/Users/jonathanhilgart/Downloads/google-cloud-sdk/completion.bash.inc'; fi
+
+    # go path
+    export GOPATH=$HOME/go
+
 
 #   Set Default Editor (change 'Nano' to the editor of your choice)
 #   ------------------------------------------------------------
-    export EDITOR=/usr/bin/nano
-
-#   Set default blocksize for ls, df, du
-#   from this: http://hints.macworld.com/comment.php?mode=view&cid=24491
-#   ------------------------------------------------------------
-    export BLOCKSIZE=1k
-
-#   Add color to terminal
-#   (this is all commented out as I use Mac Terminal Profiles)
-#   from http://osxdaily.com/2012/02/21/add-color-to-the-terminal-in-mac-os-x/
-#   ------------------------------------------------------------
-   export CLICOLOR=1
-   export LSCOLORS=ExFxBxDxCxegedabagacad
+    export EDITOR=/usr/bin/vim
 
 
 #   -----------------------------
@@ -90,6 +92,30 @@ trash () { command mv "$@" ~/.Trash ; }     # trash:        Moves a file to the 
 ql () { qlmanage -p "$*" >& /dev/null; }    # ql:           Opens any file in MacOS Quicklook Preview
 alias DT='tee ~/Desktop/terminalOut.txt'    # DT:           Pipe content to file on MacOS Desktop
 
+### Aliases
+alias bp="atom ~/.bash_profile"
+alias bps="atom ~/.bash_profile_secrets"
+alias bpi="atom ~/.bash_includes"
+alias sc="source ~/.bash_profile"
+
+### Fin aliases
+alias dk='docker-compose'
+alias dlogs='docker-compose logs -f --tail=50'
+alias cslogs='docker-sync logs -f'
+
+
+
+#### toggle show/hide hidden files in Finder
+alias showhidefileson='defaults write com.apple.Finder AppleShowAllFiles YES; killall -HUP Finder'
+alias showhidefilesoff='defaults write com.apple.Finder AppleShowAllFiles NO; killall -HUP Finder'
+
+
+### NPM Module common scripts
+alias karma='./node_modules/karma/bin/karma'
+alias karmaone='./node_modules/karma/bin/karma start --singleRun --browsers PhantomJS'
+
+
+
 #   lr:  Full Recursive Directory Listing
 #   ------------------------------------------
 alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'' | less'
@@ -105,57 +131,6 @@ alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\
 #   ------------------------------------------------------------
     showa () { /usr/bin/grep --color=always -i -a1 $@ ~/Library/init/bash/aliases.bash | grep -v '^\s*$' | less -FSRXc ; }
 
-
-#   -------------------------------
-#   3. FILE AND FOLDER MANAGEMENT
-#   -------------------------------
-
-zipf () { zip -r "$1".zip "$1" ; }          # zipf:         To create a ZIP archive of a folder
-alias numFiles='echo $(ls -1 | wc -l)'      # numFiles:     Count of non-hidden files in current dir
-alias make1mb='mkfile 1m ./1MB.dat'         # make1mb:      Creates a file of 1mb size (all zeros)
-alias make5mb='mkfile 5m ./5MB.dat'         # make5mb:      Creates a file of 5mb size (all zeros)
-alias make10mb='mkfile 10m ./10MB.dat'      # make10mb:     Creates a file of 10mb size (all zeros)
-
-#   cdf:  'Cd's to frontmost window of MacOS Finder
-#   ------------------------------------------------------
-    cdf () {
-        currFolderPath=$( /usr/bin/osascript <<EOT
-            tell application "Finder"
-                try
-            set currFolder to (folder of the front window as alias)
-                on error
-            set currFolder to (path to desktop folder as alias)
-                end try
-                POSIX path of currFolder
-            end tell
-EOT
-        )
-        echo "cd to \"$currFolderPath\""
-        cd "$currFolderPath"
-    }
-
-#   extract:  Extract most know archives with one command
-#   ---------------------------------------------------------
-    extract () {
-        if [ -f $1 ] ; then
-          case $1 in
-            *.tar.bz2)   tar xjf $1     ;;
-            *.tar.gz)    tar xzf $1     ;;
-            *.bz2)       bunzip2 $1     ;;
-            *.rar)       unrar e $1     ;;
-            *.gz)        gunzip $1      ;;
-            *.tar)       tar xf $1      ;;
-            *.tbz2)      tar xjf $1     ;;
-            *.tgz)       tar xzf $1     ;;
-            *.zip)       unzip $1       ;;
-            *.Z)         uncompress $1  ;;
-            *.7z)        7z x $1        ;;
-            *)     echo "'$1' cannot be extracted via extract()" ;;
-             esac
-         else
-             echo "'$1' is not a valid file"
-         fi
-    }
 
 
 #   ---------------------------
@@ -209,38 +184,8 @@ ffe () { /usr/bin/find . -name '*'"$@" ; }  # ffe:      Find file whose name end
     my_ps() { ps $@ -u $USER -o pid,%cpu,%mem,start,time,bsdtime,command ; }
 
 
-#   ---------------------------
-#   6. NETWORKING
-#   ---------------------------
 
-alias myip='curl ip.appspot.com'                    # myip:         Public facing IP Address
-alias netCons='lsof -i'                             # netCons:      Show all open TCP/IP sockets
-alias flushDNS='dscacheutil -flushcache'            # flushDNS:     Flush out the DNS Cache
-alias lsock='sudo /usr/sbin/lsof -i -P'             # lsock:        Display open sockets
-alias lsockU='sudo /usr/sbin/lsof -nP | grep UDP'   # lsockU:       Display only open UDP sockets
-alias lsockT='sudo /usr/sbin/lsof -nP | grep TCP'   # lsockT:       Display only open TCP sockets
-alias ipInfo0='ipconfig getpacket en0'              # ipInfo0:      Get info on connections for en0
-alias ipInfo1='ipconfig getpacket en1'              # ipInfo1:      Get info on connections for en1
-alias openPorts='sudo lsof -i | grep LISTEN'        # openPorts:    All listening connections
-alias showBlocked='sudo ipfw list'                  # showBlocked:  All ipfw rules inc/ blocked IPs
-
-#   ii:  display useful host related informaton
-#   -------------------------------------------------------------------
-    ii() {
-        echo -e "\nYou are logged on ${RED}$HOST"
-        echo -e "\nAdditionnal information:$NC " ; uname -a
-        echo -e "\n${RED}Users logged on:$NC " ; w -h
-        echo -e "\n${RED}Current date :$NC " ; date
-        echo -e "\n${RED}Machine stats :$NC " ; uptime
-        echo -e "\n${RED}Current network location :$NC " ; scselect
-        echo -e "\n${RED}Public facing IP Address :$NC " ;myip
-        #echo -e "\n${RED}DNS Configuration:$NC " ; scutil --dns
-        echo
-    }
-
-
-#   ---------------------------------------
-
+###### AUTOCOMPLTEION
 # brew bash completion
 if [ -f `brew --prefix`/etc/bash_completion ]; then
 . `brew --prefix`/etc/bash_completion
@@ -251,9 +196,44 @@ if [ -f `brew --prefix`/bin/aws_completer ]; then
 complete -C aws_completer aws
 fi
 
-# git completion
+# git completion Get the aliases and functions
 if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+######
+
+
+
+# the classic MySQL library path fix for OSX  (un-comment if installing mysql)
+# export LD_LIBRARY_PATH=/usr/local/mysql-5.5.19-osx10.6-x86_64/lib
+export PATH=/usr/local/bin:$PATH:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/share/npm/bin:~/.ec2/bin
+
+# VirtualEnvWrapper
+export WORKON_HOME=~/virtualenvs
+if [ -f /usr/local/bin/virtualenvwrapper.sh ] ; then source /usr/local/bin/virtualenvwrapper.sh; fi
+
+# rbenv
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; else echo rbenv not installed; fi
+
+# pyenv
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; eval "$(pyenv virtualenv-init -)"; else echo pyenv not installed; fi
+
+
+# generate ctags in different languages
+alias ctags_ruby='ctags -R --languages=ruby --exclude=.git --exclude=vendor/bundle --exclude=node_modules --exclude=coverage'
+alias ctags_python='ctags -R --languages=python --exclude=.git --exclude=node_modules --exclude=coverage'
+
+# EC2 Command Line Tools - not really using recently
+# export JAVA_HOME="`/usr/libexec/java_home -v 1.6`"
+# export EC2_PRIVATE_KEY="$(/bin/ls $HOME/.ec2/pk-*.pem)"
+# export EC2_CERT="$(/bin/ls $HOME/.ec2/cert-*.pem)"
+# export EC2_HOME="/usr/local/Library/LinkedKegs/ec2-api-tools/jars"
+
 
 
