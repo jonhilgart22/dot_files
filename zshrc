@@ -33,11 +33,6 @@ POWERLEVEL9K_VCS_UNTRACKED_ICON=$'⚠️ '
 POWERLEVEL9K_VCS_UNSTAGED_ICON=$'🙅🏻‍♂️'
 POWERLEVEL9K_VCS_STAGED_ICON=$'🚀'
 
-# Add the custom Affirm icon prompt segment
-POWERLEVEL9K_CUSTOM_AFFIRM="echo -n '\uF68B' affirm"
-POWERLEVEL9K_CUSTOM_AFFIRM_FOREGROUND="white"
-POWERLEVEL9K_CUSTOM_AFFIRM_BACKGROUND="017" # also like darkblue
-
 # Context
 POWERLEVEL9K_CONTEXT_BACKGROUND="white" # not working
 
