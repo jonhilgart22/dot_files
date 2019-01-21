@@ -65,14 +65,16 @@ alias dot="cd ~/code/dotfiles"
 
 ## Profile Aliases
 
-alias h='history'
+alias h="history"
 # confirmation #
-alias mv='mv -i'
-alias cp='cp -i'
-alias ln='ln -i'
-alias hs='history | grep'
-alias cd='cd
-cd() { builtin cd "$@"; ll; }               # Always list directory contents upon 'cd'
+alias mv="mv -i"
+alias cp="cp -i"
+alias ln="ln -i"
+alias hs="history | grep"
+alias cd="cd"
+### Show all files in a directory
+autoload -U add-zsh-hook
+add-zsh-hook -Uz chpwd (){ ls -a; }
 
 
 ### Docker aliases
@@ -87,7 +89,7 @@ alias grep='grep -i --color=auto'
 alias gg='git grep -n --color --heading --break'
 alias .b='source ~/.bashrc && source ~/.bash_profile'
 alias gd='git diff'
-alias gac="git add . && git commit -a -m "
+alias gac='git add . && git commit -a -m '
 
 # gsr = Git Search Replace
 function gsr() {
