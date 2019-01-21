@@ -63,6 +63,18 @@ alias sourcezsh="source ~/.zshrc"
 
 alias dot="cd ~/code/dotfiles"
 
+## Profile Aliases
+
+alias h='history'
+# confirmation #
+alias mv='mv -i'
+alias cp='cp -i'
+alias ln='ln -i'
+alias hs='history | grep'
+alias cd='cd
+cd() { builtin cd "$@"; ll; }               # Always list directory contents upon 'cd'
+
+
 ### Docker aliases
 alias dk='docker-compose'
 alias dlogs='docker-compose logs -f --tail=50'
@@ -75,6 +87,7 @@ alias grep='grep -i --color=auto'
 alias gg='git grep -n --color --heading --break'
 alias .b='source ~/.bashrc && source ~/.bash_profile'
 alias gd='git diff'
+alias gac="git add . && git commit -a -m "
 
 # gsr = Git Search Replace
 function gsr() {
