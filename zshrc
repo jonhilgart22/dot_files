@@ -1,3 +1,15 @@
+### Path-ey things
+###
+# the classic MySQL library path fix for OSX  (un-comment if installing mysql)
+# Path for pyenv
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# export LD_LIBRARY_PATH=/usr/local/mysql-5.5.19-osx10.6-x86_64/lib
+export PATH=$(pyenv root)/shims:/usr/local/bin:$PATH:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/share/npm/bin:~/.ec2/bin
+
+
+
+
 # Ensure home directory name is correct
 export USER=$(whoami)
 export ZSH="/Users/$USER/.oh-my-zsh"
@@ -117,13 +129,6 @@ zmodload -i zsh/complist
 ### Imported from bash_profile
 
 ### TODO: Understand the below better
-
-###
-### Path-ey things
-###
-# the classic MySQL library path fix for OSX  (un-comment if installing mysql)
-# export LD_LIBRARY_PATH=/usr/local/mysql-5.5.19-osx10.6-x86_64/lib
-export PATH=$(pyenv root)/shims:/usr/local/bin:$PATH:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/share/npm/bin:~/.ec2/bin
 
 # VirtualEnvWrapper
 # export WORKON_HOME=~/virtualenvs
