@@ -6,8 +6,8 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # export LD_LIBRARY_PATH=/usr/local/mysql-5.5.19-osx10.6-x86_64/lib
 export PATH=$(pyenv root)/shims:/usr/local/bin:$PATH:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/share/npm/bin:~/.ec2/bin
-
-
+# Local utilities
+export PATH=/bin:/usr/bin:/usr/local/bin:${PATH}
 
 
 # Ensure home directory name is correct
