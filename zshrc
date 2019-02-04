@@ -87,7 +87,7 @@ alias hs="history | grep"
 alias cd="cd"
 ### Show all files in a directory
 autoload -U add-zsh-hook
-add-zsh-hook -Uz chpwd (){ ls -a; }
+add-zsh-hook -Uz chpwd (){ ls -la; }
 
 
 ### Docker aliases
