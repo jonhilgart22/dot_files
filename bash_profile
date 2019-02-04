@@ -10,10 +10,6 @@ HISTSIZE=100000
 ### Source other bash files with specific/private setups
 if [ -f ~/.bash_profile_secrets ] ; then source ~/.bash_profile_secrets; fi
 
-### Fin path
-export FIN_HOME=~/code/fin-core-beta
-export FIN_SSH_USERNAME="mike_cohen"
-source "${FIN_HOME}/fin-dev/bashrc"
 
 ### Aliases
 alias bp="atom ~/.bash_profile"
@@ -41,11 +37,6 @@ if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
 
-### Setup Fin to work via Alfred
-### https://github.com/kortina/fin-alfred
-export FIN_FROM_EMAIL="mrkcohen@gmail.com"
-export FIN_TO_EMAIL="mike.cohen@fin.com" # ask Fin for this if you don't know it
-export FIN_ALFRED_LOG="/dev/null"
 
 ### Datacoral
 if [[ ":$PATH:" != *":$HOME/.datacoral/cli/bin:"* ]];
