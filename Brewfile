@@ -23,6 +23,7 @@ brew 'rbenv'
 brew 'python2'
 brew 'pyenv'
 brew 'pyenv-virtualenv'
+brew 'diff-so-fancy'
 # brew 'pyenv-virtualenvwrapper'
 
 ## Caskfile
