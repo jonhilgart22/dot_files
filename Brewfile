@@ -26,6 +26,7 @@ brew 'pyenv-virtualenv'
 brew 'diff-so-fancy'
 # brew 'pyenv-virtualenvwrapper'
 
+
 ## Caskfile
 cask '1password'
 cask 'alfred'
@@ -44,6 +45,7 @@ cask 'rstudio'
 cask 'spectacle'
 cask 'spotify'
 cask 'vlc'
+cask 'aerial'
 
 # Fonts
 cask 'font-droidsansmono-nerd-font'
