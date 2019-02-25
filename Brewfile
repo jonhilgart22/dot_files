@@ -24,6 +24,7 @@ brew 'python2'
 brew 'pyenv'
 brew 'pyenv-virtualenv'
 brew 'diff-so-fancy'
+brew 'emacs'
 # brew 'pyenv-virtualenvwrapper'
 
 
