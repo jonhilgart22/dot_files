@@ -47,6 +47,7 @@ cask 'spectacle'
 cask 'spotify'
 cask 'vlc'
 cask 'aerial'
+cak 'postico'
 
 # Fonts
 cask 'font-droidsansmono-nerd-font'
