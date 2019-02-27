@@ -96,3 +96,17 @@ export PATH="/anaconda/bin:$PATH"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+
+# Change your ssh tabs
+function tabc {
+  NAME=$1; if [ -z "$NAME" ]; then NAME="Default"; fi
+  osascript -e "tell application "Terminal" to set current settings of front window to settings set "$NAME""
+}
+
+function ssh {
+  tabc "SSH-theme"
+  /usr/bin/ssh "$@"
+  tabc "Visor"
+}
