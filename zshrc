@@ -159,3 +159,16 @@ alias showhidefilesoff='defaults write com.apple.Finder AppleShowAllFiles NO; ki
 # alias karmaone='./node_modules/karma/bin/karma start --singleRun --browsers PhantomJS'
 
 export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
+
+
+# Change your ssh tabs
+function tabc {
+  NAME=$1; if [ -z "$NAME" ]; then NAME="Default"; fi
+  osascript -e "tell application "Terminal" to set current settings of front window to settings set "$NAME""
+}
+
+function ssh {
+  tabc "SSH-theme"
+  /usr/bin/ssh "$@"
+  tabc "Visor"
+}
