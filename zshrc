@@ -158,6 +158,12 @@ alias showhidefilesoff='defaults write com.apple.Finder AppleShowAllFiles NO; ki
 # alias karma='./node_modules/karma/bin/karma'
 # alias karmaone='./node_modules/karma/bin/karma start --singleRun --browsers PhantomJS'
 
+## NVM package maanger
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
 export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
 
 
