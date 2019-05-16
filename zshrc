@@ -4,8 +4,6 @@
 # Path for pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
-# pyenv
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; eval "$(pyenv virtualenv-init -)"; else echo pyenv not installed; fi
 
 # MYSQL path
 export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
@@ -184,3 +182,7 @@ function ssh {
 export AWS_ACCESS_KEY_ID="$(aws configure get default.aws_access_key_id)"
 export AWS_SECRET_ACCESS_KEY="$(aws configure get default.aws_secret_access_key)"
 
+# Final pyenv
+
+# pyenv
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; eval "$(pyenv virtualenv-init -)"; else echo pyenv not installed; fi
