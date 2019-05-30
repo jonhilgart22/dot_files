@@ -186,8 +186,8 @@ export AWS_SECRET_ACCESS_KEY="$(aws configure get default.aws_secret_access_key)
 function ssh_into_env () {
   beans exec rails console --interactive -a onelife-$1 -i ~/.ssh/1life-core.pem
 }
+#Nodenv
+eval "$(nodenv init -)"
 
 # Final pyenv
-
-# pyenv
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; eval "$(pyenv virtualenv-init -)"; else echo pyenv not installed; fi
