@@ -26,6 +26,7 @@ brew 'pyenv-virtualenv'
 brew 'diff-so-fancy'
 brew 'emacs'
 brew 'terraform'
+brew 'docker-sync'
 # brew 'pyenv-virtualenvwrapper'
 
 
