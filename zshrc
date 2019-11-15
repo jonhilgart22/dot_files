@@ -5,6 +5,9 @@
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 
+#poetry source
+source $HOME/.poetry/env
+
 # MYSQL path
 export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
 # export LD_LIBRARY_PATH=/usr/local/mysql-5.5.19-osx10.6-x86_64/lib
@@ -19,6 +22,7 @@ export ZSH="/Users/$USER/.oh-my-zsh"
 plugins=(
   git
   zsh-syntax-highlighting
+  poetry
 )
 
 source $ZSH/oh-my-zsh.sh
