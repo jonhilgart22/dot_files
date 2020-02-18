@@ -1,16 +1,17 @@
 ### Path-ey things
 ###
-# the classic MySQL library path fix for OSX  (un-comment if installing mysql)
 # Path for pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
+export PATH="$PYENV_ROOT/.pyenv/shims:$PATH"
+export PATH="$HOME/.pyenv/bin:$PATH"
 
-# MYSQL path
-export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
-# export LD_LIBRARY_PATH=/usr/local/mysql-5.5.19-osx10.6-x86_64/lib
-export PATH=$(pyenv root)/shims:/usr/local/bin:$PATH:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/share/npm/bin:~/.ec2/bin
+export PATH="$PYENV_ROOT/shims:/usr/local/bin:$PATH:/usr/local/sbin:/usr/local/mysql/bin:$PATH"
+# aws
+export PATH="/usr/local/bin/aws:$/usr/local/aws:PATH"
 # Local utilities
 export PATH=/bin:/usr/bin:/usr/local/bin:${PATH}
+
 
 
 # Ensure home directory name is correct
