@@ -1,12 +1,15 @@
-### Path-ey things
-###
+### Pathy things
 # Path for pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 export PATH="$PYENV_ROOT/.pyenv/shims:$PATH"
 export PATH="$HOME/.pyenv/bin:$PATH"
 
-export PATH="$PYENV_ROOT/shims:/usr/local/bin:$PATH:/usr/local/sbin:/usr/local/mysql/bin:$PATH"
+export PATH="(pyenv root)/shims:/usr/bin:/bin:/usr/local/bin:$PATH:/usr/local/sbin:/usr/local/mysql/bin:$PATH"
+# aws
+export PATH="/usr/local/bin/aws:$/usr/local/aws:PATH"
+# Local utilities
+export PATH=/bin:/usr/bin:/usr/local/bin:${PATH}
 # aws
 export PATH="/usr/local/bin/aws:$/usr/local/aws:PATH"
 # Local utilities
