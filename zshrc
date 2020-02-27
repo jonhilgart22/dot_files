@@ -4,7 +4,7 @@ export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 export PATH="$PYENV_ROOT/.pyenv/shims:$PATH"
 export PATH="$HOME/.pyenv/bin:$PATH"
-
+export PATH=$PATH:~/.local/bin
 export PATH="(pyenv root)/shims:/usr/local/bin:/usr/bin:/bin:/usr/local/bin:$PATH:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/Cellar:/usr/local:$PATH"
 # aws
 export PATH="/usr/local/bin/aws:$/usr/local/aws:PATH"
