@@ -15,7 +15,9 @@ export PATH="/usr/local/bin/aws:$/usr/local/aws:PATH"
 # Local utilities
 export PATH=/bin:/usr/bin:/usr/local/bin:${PATH}
 
-
+# color terminal
+export CLICOLOR=1
+export LSCOLORS=ExFxCxDxBxegedabagacad
 
 # Ensure home directory name is correct
 export USER=$(whoami)
