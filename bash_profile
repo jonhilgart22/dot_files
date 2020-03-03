@@ -150,3 +150,5 @@ function ssh {
   /usr/bin/ssh "$@"
   tabc "Visor"
 }
+
+export PATH="$HOME/.poetry/bin:$PATH"
