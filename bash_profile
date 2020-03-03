@@ -42,7 +42,6 @@ alias mv="mv -i"
 alias cp="cp -i"
 alias ln="ln -i"
 alias hs="history | grep"
-alias cd="cd && ls -la"
 alias grep='grep --color=auto'
 
 ### Docker aliases
@@ -162,3 +161,7 @@ function ssh {
   tabc "Visor"
 }
 
+# show all files with cd
+function cd {
+    builtin cd "$@" && ls
+}
