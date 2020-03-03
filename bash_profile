@@ -10,17 +10,57 @@ HISTSIZE=100000
 ### Source other bash files with specific/private setups
 if [ -f ~/.bash_profile_secrets ] ; then source ~/.bash_profile_secrets; fi
 
-
 ### Aliases
-alias bp="atom ~/.bash_profile"
-alias bps="atom ~/.bash_profile_secrets"
-alias bpi="atom ~/.bash_includes"
-alias sc="source ~/.bash_profile"
+alias bp="atom ~/code/dotfiles/bash_profile"
+alias bpi="atom ~/code/dotfiles/bash_includes"
+alias sourcebp="source ~/.bash_profile"
 
-### Fin aliases
+alias zshconfig="atom ~/code/dotfiles/zshrc"
+alias sourcezsh="source ~/.zshrc"
+
+alias dot="cd ~/code/dotfiles"
+
+## Profile Aliases
+
+alias h="history"
+# confirmation #
+alias mv="mv -i"
+alias cp="cp -i"
+alias ln="ln -i"
+alias hs="history | grep"
+alias cd="cd"
+### Show all files in a directory
+autoload -U add-zsh-hook
+add-zsh-hook -Uz chpwd (){ ls -la; }
+
+
+### Docker aliases
 alias dk='docker-compose'
 alias dlogs='docker-compose logs -f --tail=50'
 alias cslogs='docker-sync logs -f'
+
+### Git
+alias lsl='ls -G -lh --color=auto'
+function lsp() { ls -lh $1 | egrep -v '.*.pyc$'; }
+alias grep='grep -i --color=auto'
+alias gg='git grep -n --color --heading --break'
+alias .b='source ~/.bashrc && source ~/.bash_profile'
+alias gd='git diff'
+alias gac='git add . && git commit -a -m '
+
+# gsr = Git Search Replace
+function gsr() {
+    search_string=$1
+    replace_string=$2
+    if [ -z $search_string ] || [ -z $replace_string ]
+    then
+        echo "-- Git Search & Replace (gsr)"
+        echo "-- usage: gsr search_string replace_string"
+    else
+        git grep -l $search_string | xargs sed -i '' "s/$search_string/$replace_string/g"
+        echo "Crushed it."
+    fi
+}
 
 ### brew bash completion
 if [ -f `brew --prefix`/etc/bash_completion ]; then
