@@ -43,6 +43,7 @@ alias cp="cp -i"
 alias ln="ln -i"
 alias hs="history | grep"
 alias grep='grep --color=auto'
+alias ls='ls --color=auto'
 
 ### Docker aliases
 alias dk='docker-compose'
