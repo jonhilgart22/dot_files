@@ -32,10 +32,6 @@ if [ -f ~/.bash_profile_secrets ] ; then source ~/.bash_profile_secrets; fi
 alias bp="atom ~/code/dotfiles/bash_profile"
 alias bpi="atom ~/code/dotfiles/bash_includes"
 alias sourcebp="source ~/.bash_profile"
-
-alias zshconfig="atom ~/code/dotfiles/zshrc"
-alias sourcezsh="source ~/.zshrc"
-
 alias dot="cd ~/code/dotfiles"
 
 ## Profile Aliases
@@ -46,7 +42,8 @@ alias mv="mv -i"
 alias cp="cp -i"
 alias ln="ln -i"
 alias hs="history | grep"
-alias cd="cd"
+alias cd="cd && ls -la"
+alias grep='grep --color=auto'
 ### Show all files in a directory
 autoload -U add-zsh-hook
 add-zsh-hook -Uz chpwd (){ ls -la; }
