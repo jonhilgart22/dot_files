@@ -44,10 +44,6 @@ alias ln="ln -i"
 alias hs="history | grep"
 alias cd="cd && ls -la"
 alias grep='grep --color=auto'
-### Show all files in a directory
-autoload -U add-zsh-hook
-add-zsh-hook -Uz chpwd (){ ls -la; }
-
 
 ### Docker aliases
 alias dk='docker-compose'
