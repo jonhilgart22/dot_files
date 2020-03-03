@@ -4,6 +4,10 @@
 HISTFILESIZE=100000000
 HISTSIZE=100000
 
+# color terminal
+export CLICOLOR=1
+export LSCOLORS=ExFxCxDxBxegedabagacad
+
 ### Pathy things
 # Path for pyenv
 export PYENV_ROOT="$HOME/.pyenv"
@@ -43,7 +47,6 @@ alias cp="cp -i"
 alias ln="ln -i"
 alias hs="history | grep"
 alias grep='grep --color=auto'
-alias ls='ls --color=auto'
 
 ### Docker aliases
 alias dk='docker-compose'
