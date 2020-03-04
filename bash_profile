@@ -25,6 +25,9 @@ export PATH=/bin:/usr/bin:/usr/local/bin:${PATH}
 export PATH="/usr/local/bin/aws:$/usr/local/aws:PATH"
 # Local utilities
 export PATH=/bin:/usr/bin:/usr/local/bin:${PATH}
+# the classic MySQL library path fix for OSX  (un-comment if installing mysql)
+# export LD_LIBRARY_PATH=/usr/local/mysql-5.5.19-osx10.6-x86_64/lib
+export PATH=/usr/local/bin:$PATH:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/share/npm/bin:~/.ec2/bin
 
 ### Source general (osx or linux) bash setup
 [[ -f ~/.bash_includes ]] && source ~/.bash_includes
@@ -92,20 +95,9 @@ if [ -f ~/.git-completion.bash ]; then
 fi
 
 
-### Datacoral
-if [[ ":$PATH:" != *":$HOME/.datacoral/cli/bin:"* ]];
-then
-  export PATH=$HOME/.datacoral/cli/bin:$PATH
-fi
-
 ### NB: Understand below
 
-###
-### Path-ey things
-###
-# the classic MySQL library path fix for OSX  (un-comment if installing mysql)
-# export LD_LIBRARY_PATH=/usr/local/mysql-5.5.19-osx10.6-x86_64/lib
-export PATH=/usr/local/bin:$PATH:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/share/npm/bin:~/.ec2/bin
+
 
 # VirtualEnvWrapper
 export WORKON_HOME=~/virtualenvs
@@ -151,7 +143,14 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# AWS 
+export AWS_ACCESS_KEY_ID="$(aws configure get default.aws_access_key_id)"
+export AWS_SECRET_ACCESS_KEY="$(aws configure get default.aws_secret_access_key)"
 
+# need to change this for different aws accounts
+function login_into_ecr {
+  $(aws ecr get-login-password   | docker login -u AWS --password-stdin https://193567999519.dkr.ecr.us-east-1.amazonaws.com)
+}
 
 # Change your ssh tabs
 function tabc {
