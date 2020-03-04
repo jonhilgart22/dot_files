@@ -136,7 +136,6 @@ zmodload -i zsh/complist
 ### aws completion
 # source /usr/local/share/zsh/site-functions/aws_zsh_completer.sh
 
-### Imported from bash_profile
 
 ### TODO: Understand the below better
 
@@ -185,14 +184,15 @@ function ssh {
 }
 
 ## AWS
-# AWS
+# AWS 
 export AWS_ACCESS_KEY_ID="$(aws configure get default.aws_access_key_id)"
 export AWS_SECRET_ACCESS_KEY="$(aws configure get default.aws_secret_access_key)"
 
-# onemedical ssh
-function ssh_into_env () {
-  beans exec rails console --interactive -a onelife-$1 -i ~/.ssh/1life-core.pem
+# need to change this for different aws accounts
+function login_into_ecr {
+  $(aws ecr get-login-password   | docker login -u AWS --password-stdin https://193567999519.dkr.ecr.us-east-1.amazonaws.com)
 }
+
 #Nodenv
 eval "$(nodenv init -)"
 
