@@ -64,6 +64,7 @@ alias gg='git grep -n --color --heading --break'
 alias .b='source ~/.bashrc && source ~/.bash_profile'
 alias gd='git diff'
 alias gac='git add . && git commit -a -m '
+alias gco='git checkout'
 
 # gsr = Git Search Replace
 function gsr() {
