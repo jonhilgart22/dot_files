@@ -149,7 +149,7 @@ export AWS_SECRET_ACCESS_KEY="$(aws configure get default.aws_secret_access_key)
 
 # need to change this for different aws accounts
 function login_into_ecr {
-  $(aws ecr get-login-password   | docker login -u AWS --password-stdin https://193567999519.dkr.ecr.us-east-1.amazonaws.com)
+  aws ecr get-login-password   | docker login -u AWS --password-stdin https://193567999519.dkr.ecr.us-east-1.amazonaws.com
 }
 
 # Change your ssh tabs
