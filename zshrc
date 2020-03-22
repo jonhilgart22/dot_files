@@ -203,3 +203,8 @@ if which pyenv > /dev/null; then eval "$(pyenv init -)"; eval "$(pyenv virtualen
 # Modify path for Python's poetry dependency management system
 export PATH="$HOME/.poetry/bin:$PATH"
 alias poetry_shell='. "$(dirname $(poetry run which python))/activate"'
+
+
+# set language to utf 8
+export LC_ALL="en_US.UTF-8"
+export LANG="en_US.UTF-8"
