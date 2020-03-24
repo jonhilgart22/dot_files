@@ -207,3 +207,6 @@ if which pyenv > /dev/null; then eval "$(pyenv init -)"; eval "$(pyenv virtualen
 # Modify path for Python's poetry dependency management system
 export PATH="$HOME/.poetry/bin:$PATH"
 alias poetry_shell='. "$(dirname $(poetry run which python))/activate"'
+
+# VScode on path
+code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
