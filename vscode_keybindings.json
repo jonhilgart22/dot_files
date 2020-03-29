@@ -9,4 +9,5 @@
         "key": "shift+cmd+[",
         "command": "workbench.action.terminal.focusPrevious",
         "when": "terminalFocus"
-    ]
+    }
+   ]
