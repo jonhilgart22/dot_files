@@ -9,11 +9,20 @@
     "html.format.indentHandlebars": true,
     "editor.formatOnSave": true,
     "python.formatting.provider": "black",
+    "python.formatting.blackArgs": [
+        "-S",
+        "--line-length",
+        "120"
+    ],
     "[dockerfile]": {
         "editor.defaultFormatter": "ms-azuretools.vscode-docker"
     },
     "python.jediEnabled": false,
     "python.venvPath": "/Users/jhilgart/Library/Caches/pypoetry/virtualenvs/",
     "explorer.confirmDragAndDrop": false,
-    "editor.wordWrap": "on"
+    "editor.wordWrap": "on",
+    "editor.acceptSuggestionOnEnter": "off",
+    "editor.codeLens": true,
+    "python.dataScience.askForKernelRestart": false,
+    "explorer.confirmDelete": false,
 }
