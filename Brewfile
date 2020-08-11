@@ -27,6 +27,7 @@ brew 'emacs'
 brew 'terraform'
 brew 'docker-sync'
 brew 'nodenv'
+brew 'git-lfs'
 # brew 'pyenv-virtualenvwrapper'
 
 
