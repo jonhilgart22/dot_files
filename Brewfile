@@ -28,7 +28,8 @@ brew 'terraform'
 brew 'docker-sync'
 brew 'nodenv'
 brew 'git-lfs'
-brea 'warrensbox/tap/tfswitch'
+brew 'warrensbox/tap/tfswitch'
+brew 'pre-commit'
 # brew 'pyenv-virtualenvwrapper'
 
 
