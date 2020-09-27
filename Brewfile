@@ -30,6 +30,7 @@ brew 'nodenv'
 brew 'git-lfs'
 brew 'warrensbox/tap/tfswitch'
 brew 'pre-commit'
+break 'terraform-docs'
 # brew 'pyenv-virtualenvwrapper'
 
 
