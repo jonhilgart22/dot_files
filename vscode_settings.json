@@ -25,4 +25,6 @@
     "editor.codeLens": true,
     "python.dataScience.askForKernelRestart": false,
     "explorer.confirmDelete": false,
+    "webview.experimental.useExternalEndpoint": true,
+
 }
