@@ -31,13 +31,14 @@ brew 'git-lfs'
 brew 'warrensbox/tap/tfswitch'
 brew 'pre-commit'
 break 'terraform-docs'
+brew 'tflint'
 # brew 'pyenv-virtualenvwrapper'
 
 
 ## Caskfile
 cask '1password'
 cask 'alfred'
-cask 'atom'
+cask 'visual-studio-code'
 cask 'chrome-devtools'
 # cask 'dropbox'
 # cask 'google-chrome'
