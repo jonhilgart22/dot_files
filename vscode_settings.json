@@ -1,30 +1,51 @@
 {
-    "editor.suggestSelection": "first",
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "terminal.integrated.shell.osx": "/bin/zsh",
-    "window.zoomLevel": -1,
-    "terminal.integrated.experimentalUseTitleEvent": true,
-    "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace, 'Segoe UI Emoji', \"terminal.integrated.fontFamily\": \"'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
-    "terminal.integrated.fontFamily": "Hack Nerd Font",
-    "html.format.indentHandlebars": true,
-    "editor.formatOnSave": true,
-    "python.formatting.provider": "black",
-    "python.formatting.blackArgs": [
-        "-S",
-        "--line-length",
-        "120"
-    ],
-    "[dockerfile]": {
-        "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "terminal.integrated.shell.osx": "/bin/zsh",
+  "window.zoomLevel": -2,
+  "terminal.integrated.experimentalUseTitleEvent": true,
+  "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace, 'Segoe UI Emoji', \"terminal.integrated.fontFamily\": \"'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+  "terminal.integrated.fontFamily": "Hack Nerd Font",
+  "html.format.indentHandlebars": true,
+  "editor.formatOnSave": true,
+  "python.formatting.provider": "black",
+  "python.formatting.blackArgs": ["-S", "--line-length", "120"],
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
+  "python.jediEnabled": false,
+  "python.venvPath": "/Users/jhilgart/Library/Caches/pypoetry/virtualenvs/",
+  "explorer.confirmDragAndDrop": false,
+  "editor.wordWrap": "on",
+  "editor.acceptSuggestionOnEnter": "off",
+  "editor.codeLens": true,
+  "python.dataScience.askForKernelRestart": false,
+  "explorer.confirmDelete": false,
+  "[markdown]": {
+    "editor.formatOnSave": false
+  },
+  "tabnine.experimentalAutoImports": true,
+  "editor.renderWhitespace": "none",
+  "editor.formatOnSaveTimeout": 3000,
+  "ruby.rubocop.executePath": "/Users/jhilgart/.rbenv/shims/",
+  "ruby.lint": {
+    "rubocop": {
+      "usebundler": true
     },
-    "python.jediEnabled": false,
-    "python.venvPath": "/Users/jhilgart/Library/Caches/pypoetry/virtualenvs/",
-    "explorer.confirmDragAndDrop": false,
-    "editor.wordWrap": "on",
-    "editor.acceptSuggestionOnEnter": "off",
-    "editor.codeLens": true,
-    "python.dataScience.askForKernelRestart": false,
-    "explorer.confirmDelete": false,
-    "webview.experimental.useExternalEndpoint": true,
-
+    "reek": {
+      "useBundler": true
+    }
+  },
+  "ruby.format": "rubocop",
+  "ruby.rubocop.onSave": true,
+  "files.associations": {
+    "*.erb": "erb"
+  },
+  "terraform.languageServer": {
+    "external": true
+  },
+  "python.analysis.memory.keepLibraryAst": true,
+  "python.analysis.memory.keepLibraryLocalVariables": true,
+  "files.autoSave": "afterDelay",
+  "python.dataScience.textOutputLimit": 0
 }
