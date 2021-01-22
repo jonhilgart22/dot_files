@@ -2,18 +2,18 @@
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "terminal.integrated.shell.osx": "/bin/zsh",
-  "window.zoomLevel": -2,
+  "window.zoomLevel": -1,
   "terminal.integrated.experimentalUseTitleEvent": true,
   "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace, 'Segoe UI Emoji', \"terminal.integrated.fontFamily\": \"'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
   "terminal.integrated.fontFamily": "Hack Nerd Font",
   "html.format.indentHandlebars": true,
   "editor.formatOnSave": true,
   "python.formatting.provider": "black",
+  "python.jediEnabled": true,
   "python.formatting.blackArgs": ["-S", "--line-length", "120"],
   "[dockerfile]": {
     "editor.defaultFormatter": "ms-azuretools.vscode-docker"
   },
-  "python.jediEnabled": false,
   "python.venvPath": "/Users/jhilgart/Library/Caches/pypoetry/virtualenvs/",
   "explorer.confirmDragAndDrop": false,
   "editor.wordWrap": "on",
@@ -47,5 +47,6 @@
   "python.analysis.memory.keepLibraryAst": true,
   "python.analysis.memory.keepLibraryLocalVariables": true,
   "files.autoSave": "afterDelay",
-  "python.dataScience.textOutputLimit": 0
+  "python.dataScience.textOutputLimit": 0,
+  "kite.showWelcomeNotificationOnStartup": false
 }
