@@ -48,5 +48,6 @@
   "python.analysis.memory.keepLibraryLocalVariables": true,
   "files.autoSave": "afterDelay",
   "python.dataScience.textOutputLimit": 0,
-  "kite.showWelcomeNotificationOnStartup": false
+  "kite.showWelcomeNotificationOnStartup": false,
+    "files.insertFinalNewline": true
 }
