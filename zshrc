@@ -8,14 +8,15 @@ export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 export PATH="$PYENV_ROOT/.pyenv/shims:$PATH"
 export PATH="$HOME/.pyenv/bin:$PATH"
-export PATH=$PATH:~/.local/bin
+# rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+# Local utilities
 export PATH="(pyenv root)/shims:/usr/local/bin:/usr/bin:/bin:/usr/local/bin:$PATH:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/Cellar:/usr/local:$PATH"
+export PATH=$PATH:~/.local/bin
 # below for mysql
 export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
-# Local utilities
-export PATH=/bin:/usr/bin:/usr/local/bin:${PATH}
+
 # aws
 export PATH="/usr/local/bin/aws:$/usr/local/aws:${PATH}"
 
