@@ -10,7 +10,6 @@ export PATH="$PYENV_ROOT/.pyenv/shims:$PATH"
 export PATH="$HOME/.pyenv/bin:$PATH"
 # rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
 # Local utilities
 export PATH="(pyenv root)/shims:/usr/local/bin:/usr/bin:/bin:/usr/local/bin:$PATH:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/Cellar:/usr/local:$PATH"
 export PATH=$PATH:~/.local/bin
@@ -205,6 +204,8 @@ eval "$(nodenv init -)"
 
 # Final pyenv
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; eval "$(pyenv virtualenv-init -)"; else echo pyenv not installed; fi
+# init rbenv
+eval "$(rbenv init -)"
 
 # Poetry init
 # Modify path for Python's poetry dependency management system
