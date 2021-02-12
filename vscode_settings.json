@@ -49,5 +49,10 @@
   "files.autoSave": "afterDelay",
   "python.dataScience.textOutputLimit": 0,
   "kite.showWelcomeNotificationOnStartup": false,
-    "files.insertFinalNewline": true
+    "files.insertFinalNewline": true,
+    "terminal.integrated.scrollback": 10000,
+  "workbench.colorCustomizations": {
+    "terminalCursor.foreground": "#b75cf4"
+  },
+  "terminal.integrated.cursorBlinking": true
 }
