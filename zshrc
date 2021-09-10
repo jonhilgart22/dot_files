@@ -7,7 +7,7 @@ export LANG="en_US.UTF-8"
 export PATH="$HOME/.rbenv/bin:$PATH"
 # Local utilities
 export PATH="/usr/local/bin:/usr/bin:/bin:$PATH:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/Cellar:/usr/local:$PATH"
-export PATH=$PATH:~/.local/bin
+export PATH=$PATH:~/.local/bin:/usr/local/go/bin
 # below for mysql
 export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
 # aws
