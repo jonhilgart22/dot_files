@@ -13,9 +13,12 @@ export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
 # aws
 export PATH="/usr/local/bin/aws:$/usr/local/aws:${PATH}"
 # Path for pyenv
-# export PYENV_ROOT="$HOME/.pyenv"
-# export PATH="$PYENV_ROOT/bin:$PATH"
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
 export PATH="$(pyenv root)/shims:$PATH"
+# go path
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
 
 
 # color terminal
