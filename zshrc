@@ -140,8 +140,13 @@ fpath=(~/.zsh $fpath)
 autoload -U compinit && compinit
 zmodload -i zsh/complist
 
-### aws completion
+### aws 
 # source /usr/local/share/zsh/site-functions/aws_zsh_completer.sh
+function ecr_login() {
+  ecr_url="$(aws ecr get-authorization-token --output text --query 'authorizationData[].proxyEndpoint' | awk -Fhttps:// '{print $2}')"
+  login_status="$(aws ecr get-login-password | docker login -u AWS --password-stdin https://"${ecr_url}")"
+  echo "${login_status}"
+}
 
 
 ### TODO: Understand the below better
