@@ -16,7 +16,7 @@ brew 'powerlevel9k'
 brew 'wget'
 
 # Programming
-# brew 'git'
+brew 'git'
 brew 'jq'
 brew 'R'
 brew 'rbenv'
@@ -32,6 +32,7 @@ brew 'warrensbox/tap/tfswitch'
 brew 'pre-commit'
 break 'terraform-docs'
 brew 'tflint'
+brew 'ghp'
 # brew 'pyenv-virtualenvwrapper'
 
 
