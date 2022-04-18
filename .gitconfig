@@ -1,0 +1,8 @@
+[alias]
+  # I recommend you shorten these aliases; they're verbose here for clarity of exposition
+  branchcommit = merge-base --fork-point master
+  diffbranch = !bash -c 'git diff $(git branchcommit)'
+  diffhead = !bash -c 'git diff HEAD $(git branchcommit)'
+  pending = diff --name-only
+  pendingbranch = !bash -c 'git diff --name-only $(git branchcommit)'
+  pendinghead = !bash -c 'git diff --name-only HEAD $(git branchcommit)'
