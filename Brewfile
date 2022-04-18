@@ -2,7 +2,7 @@
 
 # Taps
 tap 'Homebrew/bundle'
-tap 'caskroom/cask-fonts'
+tap 'homebrew/cask-fonts'
 tap 'sambadevi/powerlevel9k'
 
 # Basics
@@ -58,7 +58,9 @@ cask 'postico'
 cask 'dbeaver'
 
 # Fonts
-cask 'font-droidsansmono-nerd-font'
-cask 'font-droidsansmono-nerd-font-mono'
-cask 'font-droid-sans-mono-for-powerline'
 cask 'font-hack-nerd-font'
+# the ones below don't work 4/2022
+#cask 'font-droidsansmono-nerd-font'
+#cask 'font-droidsansmono-nerd-font-mono'
+#cask 'font-droid-sans-mono-for-powerline'
+#cask 'font-hack-nerd-font'
