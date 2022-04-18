@@ -33,7 +33,7 @@ brew 'pre-commit'
 break 'terraform-docs'
 brew 'tflint'
 brew 'ghp'
-# brew 'pyenv-virtualenvwrapper'
+brew 'pyenv-virtualenvwrapper'
 
 
 ## Caskfile
@@ -50,12 +50,12 @@ cask 'flash-player'
 cask 'flux'
 cask 'iterm2'
 cask 'rstudio'
-# cask 'slack' #  - use App Store
 cask 'spectacle'
 cask 'spotify'
 cask 'vlc'
 cask 'aerial'
-cak 'postico'
+cask 'postico'
+cask 'dbeaver'
 
 # Fonts
 cask 'font-droidsansmono-nerd-font'
