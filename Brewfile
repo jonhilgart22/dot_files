@@ -16,6 +16,7 @@ brew 'powerlevel9k'
 brew 'wget'
 
 # Programming
+brew 'awscli'
 brew 'git'
 brew 'jq'
 brew 'R'
