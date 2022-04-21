@@ -90,6 +90,7 @@ alias zshconfig="code ~/code/dotfiles/zshrc"
 alias sourcezsh="source ~/.zshrc"
 
 alias dot="cd ~/code/dotfiles"
+alias kc=kubectl
 
 ## Profile Aliases
 
@@ -179,7 +180,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-
 export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
 
 
@@ -220,3 +220,13 @@ alias poetry_shell='. "$(dirname $(poetry run which python))/activate"'
 
 # VScode on path
 code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
+
+# neeva
+export KUBECONFIG=$(git rev-parse --show-toplevel)/production/instances/dev-us-west-2/eks/kubeconfig
+export NAMESPACE=jonathan
+alias awsprod='pushd ~/code/neeva; eval $(go run neeva.co/cmd/prodaccess aws shell --eval); eval $(./setup_dev.sh setup); popd'
+export PATH=/opt/homebrew/bin:$PATH
+eval $(/opt/homebrew/bin/brew shellenv)
+# below is for M1 macs
+export PATH="/opt/homebrew/opt/go@1.17/bin:$PATH"
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
