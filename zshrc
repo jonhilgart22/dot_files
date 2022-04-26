@@ -222,11 +222,14 @@ alias poetry_shell='. "$(dirname $(poetry run which python))/activate"'
 code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
 
 # neeva
+# neeva
 export KUBECONFIG=$(git rev-parse --show-toplevel)/production/instances/dev-us-west-2/eks/kubeconfig
 export NAMESPACE=jonathan
+export NEEVA_USER=jonathan
+kc () {kubectl --namespace ${NAMESPACE} $*}
 alias awsprod='pushd ~/code/neeva; eval $(go run neeva.co/cmd/prodaccess aws shell --eval); eval $(./setup_dev.sh setup); popd'
 export PATH=/opt/homebrew/bin:$PATH
 eval $(/opt/homebrew/bin/brew shellenv)
-# below is for M1 macs
-export PATH="/opt/homebrew/opt/go@1.17/bin:$PATH"
+
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+export PATH="/opt/homebrew/opt/go@1.18/bin:$PATH"
