@@ -121,19 +121,8 @@ alias .b='source ~/.bashrc && source ~/.bash_profile'
 alias gd='git diff'
 alias gac='git add . && git commit -a -m '
 
-# gsr = Git Search Replace
-function gsr() {
-    search_string=$1
-    replace_string=$2
-    if [ -z $search_string ] || [ -z $replace_string ]
-    then
-        echo "-- Git Search & Replace (gsr)"
-        echo "-- usage: gsr search_string replace_string"
-    else
-        git grep -l $search_string | xargs sed -i '' "s/$search_string/$replace_string/g"
-        echo "Crushed it."
-    fi
-}
+# gsr = Git Search Replace is in bash_includes_zshrc
+
 
 ### git completion
 fpath=(~/.zsh $fpath)
