@@ -20,6 +20,8 @@ export PATH="$(pyenv root)/shims:$PATH"
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 
+### Source general (osx or linux) bash setup
+[[ -f ~/bash_includes_zshrc ]] && source ~/bash_includes_zshrc
 
 # color terminal
 export CLICOLOR=1
