@@ -222,11 +222,10 @@ alias poetry_shell='. "$(dirname $(poetry run which python))/activate"'
 code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
 
 # neeva
-# neeva
 export KUBECONFIG=$(git rev-parse --show-toplevel)/production/instances/dev-us-west-2/eks/kubeconfig
 export NAMESPACE=jonathan
 export NEEVA_USER=jonathan
-kc () {kubectl --namespace ${NAMESPACE} $*}
+alias kc='kubectl --namespace ${NAMESPACE} '
 alias awsprod='pushd ~/code/neeva; eval $(go run neeva.co/cmd/prodaccess aws shell --eval); eval $(./setup_dev.sh setup); popd'
 export PATH=/opt/homebrew/bin:$PATH
 eval $(/opt/homebrew/bin/brew shellenv)
