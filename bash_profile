@@ -33,6 +33,7 @@ export PATH="/usr/local/bin/aws:$/usr/local/aws:${PATH}"
 
 ### Source other bash files with specific/private setups
 if [ -f ~/.bash_profile_secrets ] ; then source ~/.bash_profile_secrets; fi
+if [[ -f ~/.bash_profile ]]  ; then source ~/.bash_profile; fi
 
 ### Aliases
 alias bp="atom ~/code/dotfiles/bash_profile"
