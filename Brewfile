@@ -15,6 +15,7 @@ brew 'postgresql'
 brew 'powerlevel9k'
 brew 'wget'
 
+
 # Programming
 brew 'awscli'
 brew 'git'
@@ -35,6 +36,7 @@ brew 'terraform-docs'
 brew 'tflint'
 brew 'ghp'
 brew 'pyenv-virtualenvwrapper'
+brew 'zsh-autosuggestions'
 
 
 ## Caskfile
