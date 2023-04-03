@@ -4,6 +4,7 @@
 tap 'Homebrew/bundle'
 tap 'homebrew/cask-fonts'
 tap 'sambadevi/powerlevel9k'
+tap 'graphite'
 
 # Basics
 brew 'ack'
