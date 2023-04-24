@@ -72,3 +72,5 @@ git config --global color.diff.whitespace "red reverse"
 install_oh_my_zsh
 switch_to_zsh
 install_powerlevel9k
+install_zsh_autocomplete
+install_percol
