@@ -11,6 +11,11 @@ function install_oh_my_zsh {
   fi
 }
 
+function install_zsh_autocomplete {
+  echo "Installing zsh autocomplete"
+  sh -c "$(git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions)"
+}
+
 function switch_to_zsh {
   if [ -n "`$SHELL -c 'echo $ZSH_VERSION'`" ]; then
      # assume Zsh
