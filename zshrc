@@ -34,6 +34,7 @@ plugins=(
   git
   zsh-syntax-highlighting
   poetry
+  zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
