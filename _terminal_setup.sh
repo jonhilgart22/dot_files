@@ -16,6 +16,10 @@ function install_zsh_autocomplete {
   sh -c "$(git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions)"
 }
 
+function install_percol {
+  sh -c "$(sudo pip install percol)"
+}
+
 function switch_to_zsh {
   if [ -n "`$SHELL -c 'echo $ZSH_VERSION'`" ]; then
      # assume Zsh
