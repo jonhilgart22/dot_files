@@ -133,21 +133,7 @@ fpath=(~/.zsh $fpath)
 autoload -U compinit && compinit
 zmodload -i zsh/complist
 
-## history completeion
-function exists { which $1 &> /dev/null }
 
-if exists percol; then
-    function percol_select_history() {
-        local tac
-        exists gtac && tac="gtac" || { exists tac && tac="tac" || { tac="tail -r" } }
-        BUFFER=$(fc -l -n 1 | eval $tac | percol --query "$LBUFFER")
-        CURSOR=$#BUFFER         # move cursor
-        zle -R -c               # refresh
-    }
-
-    zle -N percol_select_history
-    bindkey '^R' percol_select_history
-fi
 
 ### aws 
 # source /usr/local/share/zsh/site-functions/aws_zsh_completer.sh
@@ -240,3 +226,19 @@ eval $(/opt/homebrew/bin/brew shellenv)
 
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 export PATH="/opt/homebrew/opt/go@1.18/bin:$PATH"
+
+## history completeion
+function exists { which $1 &> /dev/null }
+
+if exists percol; then
+    function percol_select_history() {
+        local tac
+        exists gtac && tac="gtac" || { exists tac && tac="tac" || { tac="tail -r" } }
+        BUFFER=$(fc -l -n 1 | eval $tac | percol --query "$LBUFFER")
+        CURSOR=$#BUFFER         # move cursor
+        zle -R -c               # refresh
+    }
+
+    zle -N percol_select_history
+    bindkey '^R' percol_select_history
+fi
