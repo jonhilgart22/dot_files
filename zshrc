@@ -74,7 +74,7 @@ POWERLEVEL9K_VIRTUALENV_BACKGROUND="white"
 POWERLEVEL9K_MODE='nerdfont-complete'
 
 # Source/turn on Powerlevel9k
-source /usr/local/opt/powerlevel9k/powerlevel9k.zsh-theme
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Misc
 HISTFILESIZE=100000
@@ -247,3 +247,4 @@ fi
 alias python=/opt/homebrew/bin/python3
 alias pip=/opt/homebrew/bin/pip3
 export VANITY_USER=jhilgart
+source ~/.awscredentials
