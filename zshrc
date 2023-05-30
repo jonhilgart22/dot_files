@@ -242,3 +242,8 @@ if exists percol; then
     zle -N percol_select_history
     bindkey '^R' percol_select_history
 fi
+
+# snowflake
+alias python=/opt/homebrew/bin/python3
+alias pip=/opt/homebrew/bin/pip3
+export VANITY_USER=jhilgart
