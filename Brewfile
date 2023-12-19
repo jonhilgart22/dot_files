@@ -60,6 +60,8 @@ cask 'vlc'
 cask 'aerial'
 cask 'postico'
 cask 'dbeaver'
+cask 'warp'
+
 
 # Fonts
 cask 'font-hack-nerd-font'
