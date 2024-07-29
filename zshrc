@@ -4,6 +4,9 @@ export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 
+function exists { which $1 &> /dev/null }
+
+
 # Set language to utf-8 English
 export LC_ALL="en_US.UTF-8"
 export LANG="en_US.UTF-8"
@@ -141,3 +144,21 @@ source /usr/local/share/powerlevel10k/powerlevel10k.zsh-theme
 
 ## AWS Profile
 export AWS_PROFILE="pacific"
+
+if exists percol; then
+    function percol_select_history() {
+        local tac
+        exists gtac && tac="gtac" || { exists tac && tac="tac" || { tac="tail -r" } }
+        BUFFER=$(fc -l -n 1 | eval $tac | percol --query "$LBUFFER")
+        CURSOR=$#BUFFER         # move cursor
+        zle -R -c               # refresh
+    }
+
+    zle -N percol_select_history
+    bindkey '^R' percol_select_history
+fi
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+eval "$(/opt/homebrew/bin/brew shellenv)"
