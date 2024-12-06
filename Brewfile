@@ -37,6 +37,7 @@ brew 'terraform-docs'
 brew 'tflint'
 brew 'ghp'
 brew 'pyenv-virtualenvwrapper'
+brew 'supabase
 brew 'zsh-autosuggestions'
 
 
