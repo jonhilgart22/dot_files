@@ -65,6 +65,8 @@ cask 'warp'
 cask 'cursor'
 cask 'signal'
 cask 'chatgpt'
+cask 'figma'
+cask 'ollama'
 
 
 # Fonts
