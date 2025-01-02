@@ -143,15 +143,27 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 source /usr/local/share/powerlevel10k/powerlevel10k.zsh-theme
 
 ## AWS Profile
-export AWS_PROFILE="pacific"
+export AWS_PROFILE="pacific-prod"
 
+# Modify the exists function to be more reliable
+exists() {
+    command -v "$1" >/dev/null 2>&1
+}
+
+# Move percol configuration before the final sourcing commands
 if exists percol; then
     function percol_select_history() {
         local tac
-        exists gtac && tac="gtac" || { exists tac && tac="tac" || { tac="tail -r" } }
+        if exists gtac; then
+            tac="gtac"
+        elif exists tac; then
+            tac="tac"
+        else
+            tac="tail -r"
+        fi
         BUFFER=$(fc -l -n 1 | eval $tac | percol --query "$LBUFFER")
-        CURSOR=$#BUFFER         # move cursor
-        zle -R -c               # refresh
+        CURSOR=$#BUFFER
+        zle -R -c
     }
 
     zle -N percol_select_history
