@@ -16,7 +16,6 @@ brew 'postgresql'
 brew 'powerlevel9k'
 brew 'wget'
 
-
 # Programming
 brew 'awscli'
 brew 'git'
@@ -37,9 +36,8 @@ brew 'terraform-docs'
 brew 'tflint'
 brew 'ghp'
 brew 'pyenv-virtualenvwrapper'
-brew 'supabase
+brew 'supabase'  # Fixed missing quote here
 brew 'zsh-autosuggestions'
-
 
 ## Caskfile
 cask '1password'
@@ -67,7 +65,6 @@ cask 'signal'
 cask 'chatgpt'
 cask 'figma'
 cask 'ollama'
-
 
 # Fonts
 cask 'font-hack-nerd-font'
