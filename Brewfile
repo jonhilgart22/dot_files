@@ -62,6 +62,9 @@ cask 'aerial'
 cask 'postico'
 cask 'dbeaver'
 cask 'warp'
+cask 'cursor'
+cask 'signal'
+cask 'chatgpt'
 
 
 # Fonts
