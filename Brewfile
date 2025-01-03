@@ -39,6 +39,7 @@ brew 'ghp'
 brew 'pyenv-virtualenvwrapper'
 brew 'supabase'  # Fixed missing quote here
 brew 'zsh-autosuggestions'
+brew 'libmagic'
 
 ## Caskfile
 cask '1password'
