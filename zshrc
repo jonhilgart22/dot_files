@@ -125,6 +125,7 @@ alias poetry_shell='. "$(dirname $(poetry run which python))/activate"'
 code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
 
 ## Nodenv
+export PATH="$HOME/.nodenv/bin:$HOME/.nodenv/shims:$PATH"
 eval "$(nodenv init -)"
 
 ## Final pyenv
